@@ -16,9 +16,6 @@ const FollowMouse = () => {
       window.addEventListener('pointermove', handleMove)
     }
 
-
-
-
     // cleanup
     // cuando el componente se desmonta
     return () => {
