@@ -5,6 +5,7 @@ const FollowMouse = () => {
   const [enable, setEnable] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
+  // move pointer
   useEffect(() => {
     console.log('efecto')
     const handleMove = (event) => {
@@ -24,11 +25,21 @@ const FollowMouse = () => {
 
   }, [enable])
 
+  // chaged body className
+  useEffect(() => {
+    document.body.classList.toggle('no-cursor', enable)
+
+    return () => {
+      document.body.classList.toggle('no-cursor')
+    }
+  })
+
   return (
     <>
       <div style={{
         position: 'absolute',
-        backgroundColor: '#09f',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        border: '1px solid #fff',
         borderRadius: '50%',
         opacity: 0.8,
         pointerEvents: 'none',
