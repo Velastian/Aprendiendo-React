@@ -7,7 +7,6 @@ const FollowMouse = () => {
 
   // move pointer
   useEffect(() => {
-    console.log('efecto')
     const handleMove = (event) => {
       const { clientX, clientY } = event
       setPosition({ x: clientX, y: clientY })
@@ -27,7 +26,6 @@ const FollowMouse = () => {
   // chaged body className
   useEffect(() => {
     document.body.classList.toggle('no-cursor', enable)
-
     return () => {
       document.body.classList.toggle('no-cursor')
     }
