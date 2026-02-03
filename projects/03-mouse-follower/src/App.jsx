@@ -10,12 +10,14 @@ const FollowMouse = () => {
     console.log('efecto')
     const handleMove = (event) => {
       const { clientX, clientY } = event
-      console.log('handleMove', { clientX, clientY })
       setPosition({ x: clientX, y: clientY })
     }
     if (enable) {
       window.addEventListener('pointermove', handleMove)
     }
+
+
+
 
     // cleanup
     // cuando el componente se desmonta
